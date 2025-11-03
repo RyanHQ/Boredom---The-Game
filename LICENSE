@@ -1,0 +1,45 @@
+Boredom Evaluation License 1.0 (LicenseRef-Boredom-Eval)
+
+Copyright (c) 2025 Crype. All rights reserved.
+
+Permission is hereby granted to any person obtaining a copy of this software
+and associated documentation files (the “Software”) to use the Software
+solely for the limited purposes of:
+  (a) local, non-commercial testing and evaluation; and
+  (b) reporting bugs, issues, or suggestions to the copyright holder.
+
+THE FOLLOWING ARE EXPRESSLY PROHIBITED:
+  1. Copying, reproducing, redistributing, sublicensing, selling, renting,
+     leasing, or lending the Software or any part thereof, in source or
+     binary form, whether publicly or privately, with or without charge.
+  2. Creating derivative works, adaptations, translations, ports, or
+     modifications intended for distribution or publication.
+  3. Public hosting or deployment (including but not limited to websites,
+     app stores, public CDNs, or GitHub Pages) that makes the Software or
+     substantial portions thereof available to third parties.
+  4. Using the Software or its assets (code, text, art, audio, data) for
+     commercial purposes of any kind.
+  5. Using the Software or its assets to train, fine-tune, or evaluate
+     machine learning models or datasets, or to generate tooling or content
+     derived from the Software.
+
+RESERVATION OF RIGHTS:
+  All rights not expressly granted herein are reserved by the copyright
+  holder. No trademark or publicity rights are granted.
+
+TERMINATION:
+  Any breach of this license automatically terminates your rights under it.
+  Upon termination, you must cease all use and destroy all copies.
+
+DISCLAIMER:
+  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+
+CONTACT:
+  For permissions beyond this license (e.g., showcasing, publishing, or
+  collaboration), contact the copyright holder.
