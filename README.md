@@ -1,6 +1,3 @@
-
-
-````markdown
 # Boredom (Pre-Alpha 0.3)
 
 A tiny two-player sandbox prototype. Drag platforms, jump around, and… experiment.  
@@ -34,9 +31,7 @@ Because this uses ES modules and fetches JSON levels, run it with a static serve
 ```bash
 python -m http.server 8000
 # then open http://localhost:8000
-````
 
----
 
 ## Project Structure (short)
 
