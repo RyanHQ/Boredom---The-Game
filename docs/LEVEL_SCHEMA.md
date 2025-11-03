@@ -1,5 +1,7 @@
 # Level Schema (short)
 
+
+
 Levels are JSON files at `src/levels/levelN.json`.
 
 ```json
@@ -20,3 +22,9 @@ Levels are JSON files at `src/levels/levelN.json`.
     "palette": "Drag shapes to place platforms. Click eraser to remove. Reset to restart."
   }
 }
+
+## Parser rules (LevelManager)
+
+- Strings ending with `vw` → `game.clientWidth * (value/100)`
+- `bottom-N` → `game.clientHeight - N`
+- Unknown fields are ignored (forward compatible)
