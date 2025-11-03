@@ -1,3 +1,11 @@
+/*!
+ * Boredom — Copyright (c) 2025 Crype
+ * Licensed under Boredom Evaluation License 1.0 (LicenseRef-Boredom-Eval).
+ * Allowed: local non-commercial testing and bug reporting only.
+ * Forbidden: redistribution, derivatives, public hosting, commercial use, ML training.
+ */
+
+
 import { mainDialogues, playerLines } from '../data/dialogues.js';
 import { ui } from '../config.js';
 
@@ -163,3 +171,4 @@ function runNext(players, myRun, box) {
     }
   }, ui.dialogueTypeMs);
 }
+
