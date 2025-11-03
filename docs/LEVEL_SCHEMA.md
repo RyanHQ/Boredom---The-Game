@@ -1,7 +1,5 @@
 # Level Schema (short)
 
-
-
 Levels are JSON files at `src/levels/levelN.json`.
 
 ```json
@@ -22,9 +20,40 @@ Levels are JSON files at `src/levels/levelN.json`.
     "palette": "Drag shapes to place platforms. Click eraser to remove. Reset to restart."
   }
 }
+```
+
+## Field notes
+
+- `spawn.playerN`: `{ x, y, color }` (pixels from top-left)
+- `platforms`: array of rectangles
+  - `id: "floor"` is special; width auto-fits game width if `w: "100vw"`
+  - `y` may use token `"bottom-N"` to stick to bottom with an offset
+  - `w` may use token `"100vw"` to match viewport width
+- `guides`: optional text strings for on-screen tips
 
 ## Parser rules (LevelManager)
 
-- Strings ending with `vw` → `game.clientWidth * (value/100)`
+- Strings ending with `vw` → `game.clientWidth * (value / 100)`
 - `bottom-N` → `game.clientHeight - N`
-- Unknown fields are ignored (forward compatible)
+- Unknown/extra fields are ignored (forward compatible)
+
+## Minimal example (Level 2 / empty test)
+
+```json
+{
+  "name": "Empty Test",
+  "spawn": {
+    "player1": { "x": 200, "y": 0, "color": "red" },
+    "player2": { "x": 600, "y": 0, "color": "blue" }
+  },
+  "platforms": [
+    { "id": "floor", "x": 0, "y": "bottom-100", "w": "100vw", "h": 100 }
+  ]
+}
+```
+
+## Tips
+
+- Keep coordinates within the game viewport; the engine clamps players, not platforms.
+- Prefer integers for `x`, `y`, `w`, `h` (except the token strings above).
+- If something doesn’t render, open F12 → Console for JSON path errors.
