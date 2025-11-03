@@ -29,13 +29,8 @@ Because this uses ES modules and fetches JSON levels, run it with a static serve
 
 **Option B (Python 3):**
 ```bash
-python -m http.server 8000
-# then open http://localhost:8000
+Project Structure
 
-
-## Project Structure (short)
-
-```
 index.html
 styles/
   main.css
@@ -51,58 +46,53 @@ src/
   ui/               # dialogue (center box), HUD bits
   data/             # dialogue lines
   levels/           # level1.json, level2.json
-```
 
-* **Data-driven** levels (JSON)
-* **Frame-rate independent** physics (dt-based)
-* **Modular** systems (easy to swap/tune)
+Data-driven levels (JSON)
 
----
+Frame-rate independent physics (dt-based)
 
-## Features (kept vague to avoid spoilers)
+Modular systems (easy to swap/tune)
 
-* Local **two-player** platforming
-* **Drag-and-drop** building blocks
-* An **eraser** with escalating feedback
-* Ambient **UI dialogue** that reacts to play
-* Small **visual effects** that ramp up under certain conditions
+Features (kept vague to avoid spoilers)
 
----
+Local two-player platforming
 
-## Versioning
+Drag-and-drop building blocks
+
+An eraser with escalating feedback
+
+Ambient UI dialogue that reacts to play
+
+Small visual effects that ramp up under certain conditions
+
+Versioning
 
 This repo uses tags for stable points.
 
-* Current: **Pre-Alpha 0.3**
-* Create your own savepoints: `v0.3.1`, `v0.3.2`, …
+Current: Pre-Alpha 0.3
+
+Create your own savepoints: v0.3.1, v0.3.2, …
 
 If you’re experimenting, branch first, then PR or merge back when stable.
 
----
+Troubleshooting
 
-## Troubleshooting
+White page / nothing moves: you’re likely opening files directly. Run a local server.
 
-* **White page / nothing moves:** you’re likely opening files directly. Run a local server.
-* **404 on modules/JSON:** check **relative paths** (e.g., `./src/ui/dialogue.js`, `./src/levels/level1.json`).
-* **Laggy movement:** keep the tab focused; dt is capped but background tabs throttle timers.
+404 on modules/JSON: check relative paths (e.g., ./src/ui/dialogue.js, ./src/levels/level1.json).
 
----
+Laggy movement: keep the tab focused; dt is capped but background tabs throttle timers.
 
-## Contributing
+Contributing
 
 Bug reports and PRs welcome. Please keep issue titles specific (e.g.,
 “Dialogue box doesn’t cancel on reset while level auto-resets”).
 
-> Note: Some interactions are intentionally undisclosed here. Use spoiler tags in issues if needed.
+Note: Some interactions are intentionally undisclosed here. Use spoiler tags in issues if needed.
 
----
+Credits
 
-## Credits
-
-Developed by **Crype** · UiTM
+Developed by Crype · UiTM
 Copyright © 2025
-
-```
-
-Want me to add a minimal **Screenshots** section with placeholder images you can replace later?
-```
+python -m http.server 8000
+# then open http://localhost:8000
