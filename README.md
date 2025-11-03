@@ -40,3 +40,5 @@ Use is limited to **local, non-commercial testing and bug reports**.
 
 For other permissions, contact the author.
 
+- Level schema: [docs/LEVEL_SCHEMA.md](docs/LEVEL_SCHEMA.md)
+
