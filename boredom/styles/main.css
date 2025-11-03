@@ -1,0 +1,195 @@
+/* ===== Base ===== */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:#222; overflow:hidden; font-family:sans-serif; }
+#game { position:relative; width:100vw; height:100vh; user-select:none; overflow:hidden; }
+
+/* ===== Players & Floor ===== */
+.player { position:absolute; width:50px; height:50px; border-radius:5px; transition:transform 0.1s, filter 0.1s; }
+#floor { position:absolute; bottom:0; left:0; width:100%; height:100px; background:#333; }
+
+/* ===== Palette & UI (polished, same sizes) ===== */
+#palette {
+  position:absolute; top:10px; left:10px; z-index:10;
+  display:flex; gap:10px; flex-wrap:wrap;
+  padding:10px 12px; border-radius:10px;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 8px 18px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.shape {
+  width:40px; height:40px; cursor:grab;
+  border:1px solid rgba(255,255,255,0.18);
+  background:linear-gradient(180deg, #2ad12a 0%, #0e7c0e 100%);
+  border-radius:6px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.3), 0 3px 10px rgba(0,0,0,0.35);
+  transition:transform .08s ease, filter .08s ease, box-shadow .2s ease;
+}
+.shape.square { width:40px; height:40px; }
+.shape.rect   { width:80px; height:20px; }
+.shape.long   { width:120px; height:20px; }
+.shape:hover  { transform:translateY(-1px); filter:saturate(1.2); }
+.shape:active { transform:translateY(0); cursor:grabbing; }
+
+button {
+  background:linear-gradient(180deg, #4b4b4b, #2d2d2d);
+  color:white; border:none; padding:6px 10px; border-radius:8px; cursor:pointer; font-size:16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 10px rgba(0,0,0,0.35);
+  transition:transform .08s ease, filter .12s ease, box-shadow .2s ease;
+}
+button:hover { filter:brightness(1.1); transform:translateY(-1px); }
+button:active{ transform:translateY(0); }
+.eraser-active { background:linear-gradient(180deg, #c33, #7a1818) !important; }
+
+/* Platform blocks */
+.platform { position:absolute; background:#666; border:1px solid #222; cursor:pointer; border-radius:4px; }
+
+/* Tooltips & Guides */
+.tooltip { position:absolute; background:rgba(0,0,0,0.7); color:white; padding:5px 10px; border-radius:4px; font-size:12px; pointer-events:none; opacity:1; z-index:20; transition:opacity 1s; }
+.tooltip.fade-out { opacity:0; }
+
+/* Footer(s) */
+#footer { position:absolute; bottom:5px; right:10px; color:white; font-size:14px; opacity:0.7; }
+#footerLeft { position:absolute; bottom:5px; left:10px; color:white; font-size:14px; opacity:0.7; }
+
+/* Dialogue (center green) */
+#dialogue {
+  position:absolute; top:40%; left:50%; transform:translate(-50%, -50%);
+  width:70%; max-width:600px; padding:20px;
+  background:rgba(0,0,0,0.85); color:#0f0;
+  font-family:'Press Start 2P', monospace; font-size:16px;
+  border:2px solid #0f0; display:none; white-space:pre-wrap; z-index:50; text-shadow:0 0 5px #0f0;
+}
+
+/* Retro pixel font */
+@font-face {
+  font-family:'Press Start 2P';
+  src:url('https://fonts.gstatic.com/s/pressstart2p/v11/e3t4euO8yzwkEdmOcFt3beoJo3qfJpXHhFY.woff2') format('woff2');
+}
+
+/* Player glitch (rich) */
+@keyframes glitch {
+  0%{transform:translate(0,0);filter:hue-rotate(0deg);}
+  20%{transform:translate(-2px,2px);filter:hue-rotate(90deg);}
+  40%{transform:translate(2px,-2px);filter:hue-rotate(180deg);}
+  60%{transform:translate(-1px,1px);filter:hue-rotate(270deg);}
+  80%{transform:translate(1px,-1px);filter:hue-rotate(360deg);}
+  100%{transform:translate(0,0);filter:hue-rotate(0deg);}
+}
+.glitch { animation:glitch 0.15s infinite; }
+
+@keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.3);}100%{transform:scale(1);} }
+.pulse { animation:pulse 0.3s infinite; }
+
+/* Speech box */
+.player-dialogue {
+  position:absolute;
+  font-family:'Press Start 2P', monospace;
+  font-size:12px;
+  white-space:pre-wrap; z-index:30; pointer-events:none;
+  background:rgba(0,0,0,0.9); color:#fff;
+  border:2px solid var(--c, #fff); border-radius:10px;
+  padding:8px 10px; box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  max-width:220px; line-height:1.25;
+}
+.player-dialogue::after{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-8px; width:0; height:0;
+  border-left:8px solid transparent; border-right:8px solid transparent; border-top:8px solid var(--c, #fff);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+/* Screen shake */
+@keyframes screenshake {
+  0%,100% { transform:translate(0,0); }
+  20% { transform:translate(-2px, 2px); }
+  40% { transform:translate(2px, -2px); }
+  60% { transform:translate(-2px, -1px); }
+  80% { transform:translate(1px, 2px); }
+}
+.shake { animation:screenshake 180ms linear 2; }
+
+/* Player glitch-out (disappear) */
+@keyframes glitchOut {
+  0%   { opacity:1; filter:none; clip-path:inset(0 0 0 0); transform:translate(0,0) scale(1); }
+  20%  { clip-path:inset(0 0 60% 0); transform:translate(2px,-2px) scale(1.02); }
+  40%  { clip-path:inset(40% 0 0 0); transform:translate(-2px,2px) scale(1.03); }
+  60%  { filter:hue-rotate(180deg) contrast(180%) saturate(140%); }
+  80%  { filter:blur(2px) hue-rotate(260deg); opacity:0.6; transform:scale(1.06); }
+  100% { opacity:0; filter:blur(6px) hue-rotate(360deg) contrast(260%); transform:scale(1.08); }
+}
+.glitch-out { animation:glitchOut 700ms steps(12,end) forwards; }
+
+/* Ghost trails */
+.ghost { position:absolute; width:50px; height:50px; border-radius:5px; z-index:25; pointer-events:none; opacity:0.8; }
+
+/* World glitch & scanlines (after both erased) */
+@keyframes worldHue {
+  0%{ filter:none; } 25%{ filter:hue-rotate(90deg) contrast(130%); }
+  50%{ filter:hue-rotate(180deg) saturate(140%); }
+  75%{ filter:hue-rotate(270deg) contrast(160%); }
+  100%{ filter:none; }
+}
+.world-glitch { animation:worldHue 1.2s linear infinite; }
+.world-glitch-shake { animation:screenshake 220ms linear infinite; }
+.world-scanlines::before{
+  content:""; position:absolute; inset:0;
+  background:repeating-linear-gradient(transparent 0 2px, rgba(255,255,255,0.04) 2px 4px);
+  pointer-events:none; z-index:60;
+}
+
+/* Center light burst */
+#lightBurst {
+  position:absolute; left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  width:10px; height:10px; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 35%, rgba(255,255,255,0.0) 60%);
+  opacity:0; z-index:70; pointer-events:none;
+}
+@keyframes burst {
+  0%   { width:10px; height:10px; opacity:0; box-shadow:0 0 0 rgba(255,255,255,0); }
+  10%  { opacity:1; }
+  60%  { width:160vmax; height:160vmax; opacity:0.9; box-shadow:0 0 40px rgba(255,255,255,0.75); }
+  100% { width:160vmax; height:160vmax; opacity:0; box-shadow:0 0 0 rgba(255,255,255,0); }
+}
+.burst-play { animation:burst 1200ms ease-out forwards; }
+
+/* Perma glitch (60%) */
+.perma-glitch {
+  opacity:0.6 !important;
+  animation:glitch 0.18s infinite steps(2,end);
+  box-shadow:0 0 6px rgba(255,255,255,0.25), 0 0 14px rgba(255,255,255,0.15);
+  filter:contrast(140%) saturate(130%);
+}
+.perma-glitch::before,
+.perma-glitch::after{
+  content:""; position:absolute; inset:0; border-radius:5px; mix-blend-mode:screen; pointer-events:none;
+}
+.perma-glitch::before{ background:rgba(0,255,255,0.25); transform:translate(2px,0); }
+.perma-glitch::after { background:rgba(255,0,64,0.25);  transform:translate(-2px,0); }
+
+/* ===== Level Banner (LEVEL 2) ===== */
+.level-title {
+  position:absolute; left:50%; top:20%;
+  transform:translate(-50%,-50%);
+  font-family:'Press Start 2P', monospace;
+  font-size:48px; letter-spacing:2px; line-height:1;
+  color:#fff; text-shadow:0 0 12px rgba(255,255,255,0.9), 0 0 24px rgba(255,255,255,0.45);
+  z-index:80; opacity:0.98;
+  pointer-events:none;
+}
+@keyframes titleGlitch {
+  0%  { transform:translate(-50%,-50%) }
+  20% { transform:translate(calc(-50% - 2px), calc(-50% + 1px)) }
+  40% { transform:translate(calc(-50% + 2px), calc(-50% - 1px)) }
+  60% { transform:translate(calc(-50% - 1px), calc(-50% - 2px)) }
+  80% { transform:translate(calc(-50% + 1px), calc(-50% + 2px)) }
+  100%{ transform:translate(-50%,-50%) }
+}
+.level-glitch { animation:titleGlitch 220ms steps(2,end) infinite; }
+
+@keyframes fadeOutSlow { from{opacity:0.98} to{opacity:0} }
+.level-fade { animation:fadeOutSlow 1s ease forwards; }
+
+/* Optional developer banner styles are handled inline in JS */

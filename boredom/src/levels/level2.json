@@ -1,0 +1,10 @@
+{
+  "name": "Empty Test Level",
+  "spawn": {
+    "player1": { "x": 200, "y": 0, "color": "red" },
+    "player2": { "x": 600, "y": 0, "color": "blue" }
+  },
+  "platforms": [
+    { "x": 0, "y": "bottom-100", "w": "100vw", "h": 100, "id": "floor" }
+  ]
+}

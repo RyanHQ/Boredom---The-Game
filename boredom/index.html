@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boredom: Pre-Alpha 0.2</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <div id="game">
+    <!-- Palette -->
+    <div id="palette">
+      <div class="shape square" data-width="40" data-height="40" title="40×40"></div>
+      <div class="shape rect"   data-width="80" data-height="20" title="80×20"></div>
+      <div class="shape long"   data-width="120" data-height="20" title="120×20"></div>
+      <button id="eraserBtn">Eraser</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <!-- Guides -->
+    <div id="player1Guide" class="tooltip">W/A/D: Move & Jump</div>
+    <div id="player2Guide" class="tooltip">Arrow keys: Move & Jump</div>
+    <div id="paletteGuide" class="tooltip" style="left:10px; top:60px;">
+      Drag shapes to place platforms. Click eraser to remove. Reset to restart.
+    </div>
+
+    <!-- Players & world -->
+    <div id="player1" class="player"></div>
+    <div id="player2" class="player"></div>
+    <div id="floor"></div>
+
+    <!-- Footers -->
+    <div id="footerLeft">Boredom: Pre-Alpha 0.2</div>
+    <div id="footer">Develop by Crype. UiTM. November 2025.</div>
+
+    <!-- Center dialogue + effects -->
+    <div id="dialogue"></div>
+    <div id="lightBurst"></div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
