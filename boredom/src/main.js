@@ -1,3 +1,11 @@
+/*!
+ * Boredom — Copyright (c) 2025 Crype
+ * Licensed under Boredom Evaluation License 1.0 (LicenseRef-Boredom-Eval).
+ * Allowed: local non-commercial testing and bug reporting only.
+ * Forbidden: redistribution, derivatives, public hosting, commercial use, ML training.
+ */
+
+
 import { physics } from './config.js';
 import { initInput, keys } from './input.js';
 import { LevelManager } from './LevelManager.js';
@@ -519,3 +527,4 @@ function loop(now){
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
+
