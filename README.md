@@ -29,7 +29,6 @@ Because this uses ES modules and fetches JSON levels, run it with a static serve
 
 **Option B (Python 3):**
 ```bash
-Project Structure
 
 index.html
 styles/
@@ -47,52 +46,59 @@ src/
   data/             # dialogue lines
   levels/           # level1.json, level2.json
 
-Data-driven levels (JSON)
+```
 
-Frame-rate independent physics (dt-based)
+* **Data-driven** levels (JSON)
+* **Frame-rate independent** physics (dt-based)
+* **Modular** systems (easy to swap/tune)
 
-Modular systems (easy to swap/tune)
+---
 
-Features (kept vague to avoid spoilers)
+## Features (kept vague to avoid spoilers)
 
-Local two-player platforming
+* Local **two-player** platforming
+* **Drag-and-drop** building blocks
+* An **eraser** with escalating feedback
+* Ambient **UI dialogue** that reacts to play
+* Small **visual effects** that ramp up under certain conditions
 
-Drag-and-drop building blocks
+---
 
-An eraser with escalating feedback
-
-Ambient UI dialogue that reacts to play
-
-Small visual effects that ramp up under certain conditions
-
-Versioning
+## Versioning
 
 This repo uses tags for stable points.
 
-Current: Pre-Alpha 0.3
-
-Create your own savepoints: v0.3.1, v0.3.2, …
+* Current: **Pre-Alpha 0.3**
+* Create your own savepoints: `v0.3.1`, `v0.3.2`, …
 
 If you’re experimenting, branch first, then PR or merge back when stable.
 
-Troubleshooting
+---
 
-White page / nothing moves: you’re likely opening files directly. Run a local server.
+## Troubleshooting
 
-404 on modules/JSON: check relative paths (e.g., ./src/ui/dialogue.js, ./src/levels/level1.json).
+* **White page / nothing moves:** you’re likely opening files directly. Run a local server.
+* **404 on modules/JSON:** check **relative paths** (e.g., `./src/ui/dialogue.js`, `./src/levels/level1.json`).
+* **Laggy movement:** keep the tab focused; dt is capped but background tabs throttle timers.
 
-Laggy movement: keep the tab focused; dt is capped but background tabs throttle timers.
+---
 
-Contributing
+## Contributing
 
 Bug reports and PRs welcome. Please keep issue titles specific (e.g.,
 “Dialogue box doesn’t cancel on reset while level auto-resets”).
 
-Note: Some interactions are intentionally undisclosed here. Use spoiler tags in issues if needed.
+> Note: Some interactions are intentionally undisclosed here. Use spoiler tags in issues if needed.
 
-Credits
+---
 
-Developed by Crype · UiTM
+## Credits
+
+Developed by **Crype** · UiTM
 Copyright © 2025
+
+```
+
+
 python -m http.server 8000
 # then open http://localhost:8000
