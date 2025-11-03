@@ -2,44 +2,81 @@ Boredom Evaluation License 1.0 (LicenseRef-Boredom-Eval)
 
 Copyright (c) 2025 Crype. All rights reserved.
 
-Permission is hereby granted to any person obtaining a copy of this software
-and associated documentation files (the “Software”) to use the Software
-solely for the limited purposes of:
-  (a) local, non-commercial testing and evaluation; and
-  (b) reporting bugs, issues, or suggestions to the copyright holder.
+DEFINITIONS
+- “Software” means this project and all included code, data, text, images,
+  and other assets provided by the copyright holder.
+- “Evaluating User” means an individual who obtained the Software from the
+  official repository or a copy provided directly by the copyright holder.
 
-THE FOLLOWING ARE EXPRESSLY PROHIBITED:
-  1. Copying, reproducing, redistributing, sublicensing, selling, renting,
-     leasing, or lending the Software or any part thereof, in source or
-     binary form, whether publicly or privately, with or without charge.
-  2. Creating derivative works, adaptations, translations, ports, or
-     modifications intended for distribution or publication.
-  3. Public hosting or deployment (including but not limited to websites,
-     app stores, public CDNs, or GitHub Pages) that makes the Software or
-     substantial portions thereof available to third parties.
-  4. Using the Software or its assets (code, text, art, audio, data) for
-     commercial purposes of any kind.
-  5. Using the Software or its assets to train, fine-tune, or evaluate
-     machine learning models or datasets, or to generate tooling or content
-     derived from the Software.
+1. LIMITED LICENSE GRANT
+Subject to strict compliance with this License, the Evaluating User is granted
+a non-exclusive, non-transferable, revocable license to:
+  (A) install and run the Software locally for non-commercial testing,
+      evaluation, and study; and
+  (B) report bugs, issues, or suggestions to the copyright holder.
 
-RESERVATION OF RIGHTS:
-  All rights not expressly granted herein are reserved by the copyright
-  holder. No trademark or publicity rights are granted.
+2. WHAT YOU MAY DO (PERMITTED USES)
+Provided everything remains private and non-commercial, you may:
+  2.1 Make private, local copies and modifications solely to evaluate the Software.
+  2.2 Keep private forks/branches in a PRIVATE repository/account (no public visibility).
+  2.3 Make routine backups (including automated CI artifacts) in private systems.
+  2.4 Share minimal excerpts (e.g., stack traces, short code snippets) and
+      screenshots or screen recordings strictly within bug reports to the
+      copyright holder or in private communications for debugging purposes.
 
-TERMINATION:
-  Any breach of this license automatically terminates your rights under it.
-  Upon termination, you must cease all use and destroy all copies.
+3. WHAT YOU MAY NOT DO (PROHIBITED USES)
+You may NOT, under any circumstance:
+  3.1 Copy, reproduce, redistribute, publish, mirror, upload, or make available
+      the Software (or substantial portions) to any third party, whether for
+      free or for a fee, in source or binary form. This includes public Git
+      hosting (e.g., public GitHub/GitLab repos), gists, forums, or CDNs.
+  3.2 Create, distribute, or publish derivative works, adaptations, ports, or
+      translations of the Software, including modded builds or “remixes.”
+  3.3 Host, deploy, or provide access to the Software as a service (SaaS),
+      website, game server, app, or any other publicly accessible environment,
+      including streaming the playable build for public access.
+  3.4 Use any part of the Software or its assets (code, text, art, audio, data)
+      for commercial purposes of any kind.
+  3.5 Use the Software or its assets to train, fine-tune, evaluate, or build
+      machine learning models, datasets, embeddings, or synthetic content/tools.
+  3.6 Remove or alter copyright, license notices, or attribution.
+  3.7 Sub-license, rent, lease, sell, or otherwise transfer the Software or any
+      rights under this License.
+  3.8 Circumvent, disable, or interfere with any technical or usage restrictions.
 
-DISCLAIMER:
-  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-  THE SOFTWARE.
+4. CONFIDENTIALITY / NON-DISCLOSURE
+The Software is provided for private evaluation only. You must not disclose,
+publish, or otherwise make the Software (or substantial portions) available to
+any third party without prior written permission.
 
-CONTACT:
-  For permissions beyond this license (e.g., showcasing, publishing, or
-  collaboration), contact the copyright holder.
+5. THIRD-PARTY COMPONENTS
+If the Software includes third-party components, they remain licensed under
+their respective terms. In the event of conflict, the stricter restriction applies.
+
+6. RESERVATION OF RIGHTS
+All rights not expressly granted are reserved by the copyright holder. No
+trademark or publicity rights are granted.
+
+7. TERMINATION
+Any breach of this License automatically terminates all rights granted. Upon
+termination, you must cease all use and destroy all copies (including private
+forks/branches, backups, and artifacts). Termination is without prejudice to
+any other remedies.
+
+8. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT. YOU ASSUME ALL RISKS ARISING FROM USE OR
+EVALUATION OF THE SOFTWARE.
+
+9. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR
+OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
+
+10. CONTACT / PERMISSIONS
+For permissions beyond this License (e.g., showcasing, limited publishing,
+education use, collaboration), contact the copyright holder.
+
+License ID: LicenseRef-Boredom-Eval v1.0
