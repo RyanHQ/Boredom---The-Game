@@ -31,3 +31,12 @@ Because this uses ES modules and fetches JSON levels, run it with a static serve
 ```bash
 python -m http.server 8000
 # then open http://localhost:8000
+```
+## License
+
+**Boredom Evaluation License 1.0 (LicenseRef-Boredom-Eval)**  
+Use is limited to **local, non-commercial testing and bug reports**.  
+**Not permitted:** redistribution, derivatives, public hosting, commercial use, or ML training.
+
+For other permissions, contact the author.
+
