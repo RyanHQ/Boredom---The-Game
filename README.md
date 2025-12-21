@@ -38,7 +38,7 @@ python -m http.server 8000
 
 ---
 
-## Project Structure (short)
+## Project Structure 
 
 ```
 index.html
